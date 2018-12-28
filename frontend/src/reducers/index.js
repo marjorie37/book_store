@@ -4,11 +4,13 @@ import cartReducer from "./cartReducer";
 import errorReducer from "./errorReducer";
 import logReducers from "./logReducers";
 import { reducer as formReducer } from "redux-form";
+import { sessionReducer } from "redux-react-session";
 
 export default combineReducers({
   books: bookReducer,
   cart: cartReducer,
   form: formReducer,
   errors: errorReducer,
-  log: logReducers
+  log: logReducers,
+  session: sessionReducer
 });

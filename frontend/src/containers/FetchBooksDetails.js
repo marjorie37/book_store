@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import { fetchBookDetails } from "../actions/booksActions";
 import { addToCart } from "../actions/cartActions";
 import Button from "@material-ui/core/Button";
-import Navbar from "./Navbar";
 
 class FetchBooksDetails extends Component {
   componentWillMount() {
@@ -13,7 +12,6 @@ class FetchBooksDetails extends Component {
   render() {
     return (
       <div style={{ textAlign: "center" }}>
-        <Navbar />
         {this.props.bookDetails.map((t, index) => (
           <div key={index}>
             <h1>{t.title}</h1>

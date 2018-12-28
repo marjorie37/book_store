@@ -6,6 +6,7 @@ import App from "../App";
 import LoginForm from "../components/LoginForm";
 import SigninForm from "../components/SigninForm";
 import FetchBooksDetails from "../containers/FetchBooksDetails";
+import CartPage from "../containers/CartPage";
 import MyAccount from "./MyAccount";
 import store from "../store";
 import { MuiThemeProvider } from "@material-ui/core/styles";
@@ -42,6 +43,7 @@ const Root = ({ store }) => (
               <Route path="/login" component={LoginForm} />
               <Route path="/signin" component={SigninForm} />
               <Route path="/myaccount" component={MyAccount} />
+              <Route path="/cart" component={CartPage} />
             </Switch>
           </div>
         </BrowserRouter>

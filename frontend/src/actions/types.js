@@ -1,6 +1,7 @@
-export const FETCH_BOOKS = "FETCH_BOOKS"
-export const SEARCH_BOOK = "SEARCH_BOOK"
-export const FETCH_BOOK_DETAILS = "FETCH_BOOK_DETAILS"
-export const ADD_TO_CART = "ADD_TO_CART"
-export const GET_ERRORS = "GET_ERRORS"
-export const SET_CURRENT_USER = "SET_CURRENT_USER"
+export const FETCH_BOOKS = "FETCH_BOOKS";
+export const SEARCH_BOOK = "SEARCH_BOOK";
+export const FETCH_BOOK_DETAILS = "FETCH_BOOK_DETAILS";
+export const ADD_TO_CART = "ADD_TO_CART";
+export const INCREASE_QUANTITY = "INCREASE_QUANTITY";
+export const GET_ERRORS = "GET_ERRORS";
+export const SET_CURRENT_USER = "SET_CURRENT_USER";

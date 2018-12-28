@@ -12,8 +12,20 @@ const palette = {
     light: "#fffd61",
     dark: "#c79a00",
     contrastText: "#000000"
+  },
+  default: {
+    main: "#f44336",
+    light: "#ff7961",
+    dark: "#ba000d",
+    contrastText: "#000000"
   }
 };
 const theme = "Flamingo";
 
-export default createMuiTheme({ palette, theme });
+export default createMuiTheme({
+  palette,
+  theme,
+  typography: {
+    useNextVariants: true
+  }
+});

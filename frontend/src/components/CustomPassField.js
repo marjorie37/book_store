@@ -5,6 +5,16 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 import IconButton from "@material-ui/core/IconButton";
 import TextField from "@material-ui/core/TextField";
 
+export const customField = ({ label, input }) => (
+  <TextField
+    color="primary"
+    autoComplete="on"
+    helperText={label}
+    label={label}
+    {...input}
+  />
+);
+
 class customPassField extends Component {
   constructor(props) {
     super(props);

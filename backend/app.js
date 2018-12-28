@@ -6,7 +6,8 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 const config = require("./db");
-
+// const session = require("express-session");
+// const mongoSessionStore = require("connect-mongo");
 const users = require("./routes/user");
 
 mongoose
@@ -19,11 +20,29 @@ mongoose
       console.log("Database is connected");
     },
     err => {
-      console.log("Can not connect to the database" + err);
+      console.log("Cannot connect to the database" + err);
     }
   );
 
 const app = express();
+
+// const MongoStore = mongoSessionStore(session);
+
+// const userSession = {
+//   secret: "secret key",
+//   store: new MongoStore({ mongooseConnection: mongoose.connection }),
+//   resave: false,
+//   cookie: {
+//     path: "/",
+//     httpOnly: true,
+//     resave: false,
+//     saveUninitialized: true,
+//     secure: false,
+//     maxAge: null
+//   }
+// };
+
+// app.use(session(userSession));
 
 app.use(passport.initialize());
 require("./passport")(passport);
@@ -33,7 +52,7 @@ app.use(bodyParser.json());
 
 app.use("/api/users", users);
 
-app.get("/", function(req, res) {
+app.get("/", (req, res) => {
   res.send("hello");
 });
 

@@ -35,7 +35,7 @@ class Navbar extends Component {
                 <Link to="/">
                   <Button
                     onClick={e => this.handleLogout(e)}
-                    color="secondary"
+                    style={{ backgroundColor: "#f44336" }}
                     variant="contained"
                   >
                     Logout
@@ -57,6 +57,14 @@ class Navbar extends Component {
                 </Link>
               </div>
             )}
+            <Link to="/cart">
+              <Button
+                style={{ backgroundColor: "#f44336" }}
+                variant="contained"
+              >
+                Basket
+              </Button>
+            </Link>
           </Toolbar>
         </AppBar>
       </div>

@@ -2,6 +2,8 @@ import React from "react";
 import { Field, reduxForm, Form } from "redux-form";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import customPassField from "../components/CustomPassField";
+import { customField } from "../components/CustomPassField";
 import Button from "@material-ui/core/Button";
 
 let LoginPage = props => {
@@ -10,19 +12,12 @@ let LoginPage = props => {
     <Form onSubmit={handleSubmit}>
       <div style={{ textAlign: "center" }}>
         <div>
-          <label>Email</label>
-          <Field
-            placeholder="your email"
-            component="input"
-            name="email"
-            type="email"
-          />
+          <Field component={customField} name="email" label="Email" />
         </div>
         <div>
-          <label>Password</label>
           <Field
             placeholder="your password"
-            component="input"
+            component={customPassField}
             name="password"
             type="password"
           />

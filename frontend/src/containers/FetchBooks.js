@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { fetchBooks, fetchBookDetails } from "../actions/booksActions";
 import Button from "@material-ui/core/Button";
+import { addToCart } from "../actions/cartActions";
 import {
   Card,
   CardImg,
@@ -20,7 +21,7 @@ class FetchBooks extends Component {
   render() {
     const bookItem = this.props.books.map(book => (
       <Card key={book.isbn13}>
-        <CardImg src={book.image} />
+        <CardImg top src={book.image} width="10%" />
         <CardBody>
           <CardTitle>{book.title}</CardTitle>
           <CardSubtitle>{book.subtitle}</CardSubtitle>
@@ -34,12 +35,19 @@ class FetchBooks extends Component {
               more details
             </Button>
           </Link>
+          <Button
+            onClick={() => this.props.addToCart(book.isbn13)}
+            style={{ backgroundColor: "#f44336" }}
+            variant="contained"
+          >
+            Buy
+          </Button>
         </CardBody>
       </Card>
     ));
     return (
       <div>
-        <h3>New books :</h3>
+        <h3>Browse our new books :</h3>
         {bookItem}
       </div>
     );
@@ -52,7 +60,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   fetchBookDetails,
-  fetchBooks
+  fetchBooks,
+  addToCart
 };
 
 fetchBooks.propTypes = {
